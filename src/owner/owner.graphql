@@ -1,0 +1,18 @@
+type Owner {
+  id: Int!
+  name: String!
+  dogs: [Dog!]!
+}
+
+input CreateOwnerInput {
+  name: String!
+}
+
+type Query {
+  owner(id: Int!): Owner
+}
+
+type Mutation {
+  createOwner(createOwnerInput: CreateOwnerInput!): Owner!
+  removeOwner(id: Int!): Owner
+}
